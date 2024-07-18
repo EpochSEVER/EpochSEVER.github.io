@@ -15,7 +15,6 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-weight: normal;  /* 將所有文字改為細體 */
         }
 
         .container {
@@ -32,6 +31,15 @@
 
         h1, h2, p {
             margin: 0 0 15px 0;
+        }
+
+        #circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(138, 43, 226, 0) 70%);
+            pointer-events: none;
         }
 
         .discord-button {
@@ -56,11 +64,19 @@
             <h1>Epoch伺服器</h1>
         </header>
         <h2>伺服器資訊</h2>
-        <p>游戲版本:1.21</p>
+        <p>遊戲版本:1.21</p>
         <p>伺服器IP:sg-m1.vproxy.cloud:20006</p>
         <p>伺服器人超少。</p>
-        <p>如果你有任何問題或建議，别來BB。</p>
+        <p>如果你有任何問題或建議，請別來bb。</p>
         <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
     </div>
+    <div id="circle"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        var circle = document.getElementById('circle');
+        circle.style.left = (e.pageX - 100) + 'px';
+        circle.style.top = (e.pageY - 100) + 'px';
+    });
+    </script>
 </body>
 </html>
