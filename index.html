@@ -4,7 +4,43 @@
     <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
     <title>Epoch伺服器</title>
     <style>
-        /* 其他的樣式 */
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            cursor: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        header {
+            background-color: #444;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2, p {
+            margin: 0 0 15px 0;
+        }
+
+        #circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(138, 43, 226, 0) 70%);
+            pointer-events: none;
+        }
 
         .discord-button {
             display: inline-block;
@@ -23,10 +59,25 @@
     </style>
 </head>
 <body>
-    <!-- 其他的內容 -->
-
-    <a href="你的Discord伺服器的連結" class="discord-button">加入我們的 Discord 伺服器</a>
-
-    <!-- 其他的內容 -->
+    <div class="container">
+        <header>
+            <h1>歡迎來到我們的 Minecraft 伺服器！</h1>
+        </header>
+        <h2>伺服器資訊</h2>
+        <p>這裡是伺服器的資訊，你可以隨意填寫。</p>
+        <h2>玩家社區</h2>
+        <p>這裡是玩家社區的資訊，你可以隨意填寫。</p>
+        <h2>聯絡我們</h2>
+        <p>如果你有任何問題或建議，請隨時聯絡我們。</p>
+        <a href="你的Discord伺服器的連結" class="discord-button">加入我們的 Discord 伺服器</a>
+    </div>
+    <div id="circle"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        var circle = document.getElementById('circle');
+        circle.style.left = (e.pageX - 100) + 'px';
+        circle.style.top = (e.pageY - 100) + 'px';
+    });
+    </script>
 </body>
 </html>
