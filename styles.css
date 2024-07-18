@@ -4,6 +4,7 @@ body {
     color: #333;
     margin: 0;
     overflow: hidden;
+    cursor: none; /* 隱藏滑鼠指針 */
 }
 
 #circle {
