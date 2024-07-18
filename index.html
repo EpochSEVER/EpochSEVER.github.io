@@ -13,107 +13,25 @@ body {
     cursor: none; /* 隱藏滑鼠指針 */
 }
 
-.pointer-events-none {
-    pointer-events: none;
-}
-
-.absoluto {
+#circle {
     position: absolute;
-}
-
-.inserir-0 {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-
-.esquerda-50 {
-    left: 50%;
-}
-
-.topo-50 {
-    top: 50%;
-}
-
-.altura-200px {
-    height: 200px;
-}
-
-.largura-200px {
-    width: 200px;
-}
-
-.transladar-x-menos-50porcento {
-    transform: translateX(-50%);
-}
-
-.transladar-y-menos-50porcento {
-    transform: translateY(-50%);
-}
-
-.transformacao-transladar-rotacionar-inclinar-escalar {
-    transform: translate(-50%, -50%) rotate(0deg) skew(0deg) scale(1);
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
-.border-radius-9999px {
-    border-radius: 9999px;
-}
-
-.mask-radial-gradient {
-    mask-image: radial-gradient(circle, black 0%, transparent 100%);
-}
-
-.altura-200-porcento {
-    height: 200%;
-}
-
-.animacao-infinita {
-    animation: infinite-animation 5s infinite;
-}
-
-.opacity-0-2 {
-    opacity: 0.2;
-}
-
-.blur-2px {
-    filter: blur(2px);
-}
-
-.bg-repeating-linear-gradient-v-white {
-    background: repeating-linear-gradient(to bottom, white, white 10%, transparent 10%, transparent 20%);
-}
-
-.bg-repeating-linear-gradient-v-purple {
-    background: repeating-linear-gradient(to bottom, purple, purple 10%, transparent 10%, transparent 20%);
-}
-
-@keyframes infinite-animation {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
 }
 </style>
 </head>
 <body>
 <h1>歡迎來到我的網頁！</h1>
 <p>這是一個簡單的網頁，用來展示基本的 HTML 結構。</p>
-<div class="pointer-events-none absoluto inserir-0 esquerda-50 topo-50 altura-200px largura-200px transladar-x-menos-50porcento transladar-y-menos-50porcento transformacao-transladar-rotacionar-inclinar-escalar overflow-hidden border-radius-9999px mask-radial-gradient">
-    <div class="altura-200-porcento animacao-infinita">
-        <div class="absoluto inserir-0 opacity-0-2 blur-2px bg-repeating-linear-gradient-v-white"></div>
-        <div class="absoluto inserir-0 bg-repeating-linear-gradient-v-purple"></div>
-        <div class="absoluto inserir-0 opacity-0-2 blur-2px bg-repeating-linear-gradient-white"></div>
-        <div class="absoluto inserir-0 bg-repeating-linear-gradient-purple"></div>
-    </div>
-</div>
+<div id="circle"></div>
 <script>
 document.addEventListener('mousemove', function(e) {
-    var circle = document.querySelector('.pointer-events-none');
-    circle.style.left = (e.pageX - 100) + 'px';
-    circle.style.top = (e.pageY - 100) + 'px';
+    var circle = document.getElementById('circle');
+    circle.style.left = (e.pageX - 50) + 'px';
+    circle.style.top = (e.pageY - 50) + 'px';
 });
 </script>
 </body>
