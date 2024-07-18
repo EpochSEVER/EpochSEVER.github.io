@@ -36,12 +36,12 @@ body {
     top: 50%;
 }
 
-.altura-500px {
-    height: 500px;
+.altura-200px {
+    height: 200px;
 }
 
-.largura-500px {
-    width: 500px;
+.largura-200px {
+    width: 200px;
 }
 
 .transladar-x-menos-50porcento {
@@ -65,7 +65,7 @@ body {
 }
 
 .mask-radial-gradient {
-    mask-image: radial-gradient(circle, transparent 0%, black 100%);
+    mask-image: radial-gradient(circle, black 0%, transparent 100%);
 }
 
 .altura-200-porcento {
@@ -101,7 +101,7 @@ body {
 <body>
 <h1>歡迎來到我的網頁！</h1>
 <p>這是一個簡單的網頁，用來展示基本的 HTML 結構。</p>
-<div class="pointer-events-none absoluto inserir-0 esquerda-50 topo-50 altura-500px largura-500px transladar-x-menos-50porcento transladar-y-menos-50porcento transformacao-transladar-rotacionar-inclinar-escalar overflow-hidden border-radius-9999px mask-radial-gradient">
+<div class="pointer-events-none absoluto inserir-0 esquerda-50 topo-50 altura-200px largura-200px transladar-x-menos-50porcento transladar-y-menos-50porcento transformacao-transladar-rotacionar-inclinar-escalar overflow-hidden border-radius-9999px mask-radial-gradient">
     <div class="altura-200-porcento animacao-infinita">
         <div class="absoluto inserir-0 opacity-0-2 blur-2px bg-repeating-linear-gradient-v-white"></div>
         <div class="absoluto inserir-0 bg-repeating-linear-gradient-v-purple"></div>
@@ -112,8 +112,8 @@ body {
 <script>
 document.addEventListener('mousemove', function(e) {
     var circle = document.querySelector('.pointer-events-none');
-    circle.style.left = (e.pageX - 250) + 'px';
-    circle.style.top = (e.pageY - 250) + 'px';
+    circle.style.left = (e.pageX - 100) + 'px';
+    circle.style.top = (e.pageY - 100) + 'px';
 });
 </script>
 </body>
