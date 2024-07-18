@@ -1,28 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-<link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
-<title>Epoch伺服器</title>
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
+    <title>Epoch伺服器</title>
+    <style>
+        body {
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            cursor: none; /* 隱藏滑鼠指針 */
+        }
 
-#circle {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
-    pointer-events: none;
-}
-</style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        header {
+            background-color: #444;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2, p {
+            margin: 0 0 15px 0;
+        }
+
+        #circle {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+            pointer-events: none;
+        }
+    </style>
 </head>
 <body>
-<div id="circle"></div>
-<script>
-document.addEventListener('mousemove', function(e) {
-    var circle = document.getElementById('circle');
-    circle.style.left = (e.pageX - 50) + 'px';
-    circle.style.top = (e.pageY - 50) + 'px';
-});
-</script>
+    <header>
+        <h1>歡迎來到我們的 Minecraft 伺服器！</h1>
+    </header>
+    <div class="container">
+        <h2>伺服器資訊</h2>
+        <p>這裡是伺服器的資訊，你可以隨意填寫。</p>
+        <h2>玩家社區</h2>
+        <p>這裡是玩家社區的資訊，你可以隨意填寫。</p>
+        <h2>聯絡我們</h2>
+        <p>如果你有任何問題或建議，請隨時聯絡我們。</p>
+    </div>
+    <div id="circle"></div>
+    <script>
+    document.addEventListener('mousemove', function(e) {
+        var circle = document.getElementById('circle');
+        circle.style.left = (e.pageX - 50) + 'px';
+        circle.style.top = (e.pageY - 50) + 'px';
+    });
+    </script>
 </body>
 </html>
