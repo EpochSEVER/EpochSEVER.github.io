@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
     <title>Epoch伺服器</title>
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
     
     <style>
         body {
             background-color: #333;
             color: #fff;
-            font-family: 'ZCOOL QingKe HuangYou', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             cursor: none;
@@ -17,11 +17,68 @@
             align-items: center;
             height: 100vh;
         }
-        /* 其他的 CSS 代碼... */
+
+        .container {
+            text-align: center;
+        }
+
+        header {
+            background-color: #444;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            text-align: center;
+        }
+
+        h1, h2, p {
+            margin: 0 0 15px 0;
+        }
+
+        #circle {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(138, 43, 226, 0) 70%);
+            pointer-events: none;
+        }
+
+        .discord-button {
+            display: inline-block;
+            background-color: #7289da;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-button:hover {
+            background-color: #5865f2;
+        }
     </style>
 </head>
 <body>
-    <!-- 你的 body 代碼... -->
+    <div class="container">
+        <header>
+            <h1>Epoch伺服器</h1>
+        </header>
+        <h2>伺服器資訊</h2>
+        <p>遊戲版本:1.21</p>
+        <p>伺服器IP:sg-m1.vproxy.cloud:20006</p>
+        <p>伺服器人超少。</p>
+        <p>如果你有任何問題或建議，請別來bb。</p>
+        <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
+    </div>
+    <div id="circle"></div>
+    
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            var circle = document.getElementById('circle');
+            circle.style.left = (e.pageX - 100) + 'px';
+            circle.style.top = (e.pageY - 100) + 'px';
+        });
+    </script>
 </body>
 </html>
-
