@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Epoch伺服器</title>
     <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    
+    <title>Epoch伺服器</title>
     <style>
         body {
             background-color: #333;
             color: #fff;
-            font-family: 'ZCOOL QingKe HuangYou', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             cursor: none;
@@ -19,8 +15,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-size: cover;
-            transition: background-image 1s ease-in-out;
+            font-weight: normal;  /* 將所有文字改為細體 */
         }
 
         .container {
@@ -37,15 +32,6 @@
 
         h1, h2, p {
             margin: 0 0 15px 0;
-        }
-
-        #circle {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(138, 43, 226, 0) 70%);
-            pointer-events: none;
         }
 
         .discord-button {
@@ -70,26 +56,11 @@
             <h1>Epoch伺服器</h1>
         </header>
         <h2>伺服器資訊</h2>
-        <p>遊戲版本:1.21</p>
+        <p>游戲版本:1.21</p>
         <p>伺服器IP:sg-m1.vproxy.cloud:20006</p>
         <p>伺服器人超少。</p>
-        <p>如果你有任何問題或建議，請別來bb。</p>
+        <p>如果你有任何問題或建議，别來BB。</p>  <!-- 將 "別跟遊" 改為 "檢體" -->
         <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
     </div>
-    <div id="circle"></div>
-    
-    <script>
-        var images = [
-            'https://cdn.discordapp.com/attachments/1252570918669123584/1256862676462866432/2024-06-30_14.15.48_4K.png',
-            'https://cdn.discordapp.com/attachments/1252570918669123584/1256862684658401381/2024-06-30_14.04.46_4K.png',
-            'https://cdn.discordapp.com/attachments/1252570918669123584/1256862701754388543/2024-06-30_14.31.07_4K.png',
-            'https://cdn.discordapp.com/attachments/1252570918669123584/1256862701754388543/2024-06-30_14.31.07_4K.png'
-        ];
-        var currentImageIndex = 0;
-        setInterval(function() {
-            document.body.style.backgroundImage = 'url(' + images[currentImageIndex] + ')';
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-        }, 5000);  // 每5秒變換一次背景圖片
-    </script>
 </body>
 </html>
