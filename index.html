@@ -1,10 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epoch伺服器</title>
     <link rel="icon" href="https://cdn.discordapp.com/icons/1253293376347045960/536e2b5dc38d661fcb07cf6491e4ee7d.webp?size=32" type="image/webp">
     <link href="https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
-    <title>Epoch伺服器</title>
     <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 1s;
+            opacity: 0;
+        }
+
+        .bg.active {
+            opacity: 1;
+        }
+
         body {
             background-color: #333;
             color: #fff;
@@ -17,10 +41,14 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
+            position: relative;
+            z-index: 1;
         }
 
         .container {
             text-align: center;
+            position: relative;
+            z-index: 2;
         }
 
         header {
@@ -42,6 +70,7 @@
             border-radius: 50%;
             background: radial-gradient(circle, rgba(138, 43, 226, 0.5) 0%, rgba(138, 43, 226, 0) 70%);
             pointer-events: none;
+            z-index: 3;
         }
 
         .discord-button {
@@ -59,7 +88,6 @@
             background-color: #5865f2;
         }
 
-        /* 新增的顏色設定 */
         .light-green {
             color: lightgreen;
         }
@@ -78,6 +106,12 @@
     </style>
 </head>
 <body>
+    <div class="bg" id="bg1" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862676462866432/2024-06-30_14.15.48_4K.png?ex=669b5c95&is=669a0b15&hm=bf04251cf97c458797908a7aa341e1910bf1527f301306a88e283fea7400c10e&');"></div>
+    <div class="bg" id="bg2" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862681047105586/2024-06-30_14.20.38_4K.png?ex=669b5c96&is=669a0b16&hm=f14732c7ca2fcdeb54da8e11f1e5f2e76b6865fad27b19a9d95dfd45bd62274f&');"></div>
+    <div class="bg" id="bg3" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862684658401381/2024-06-30_14.04.46_4K.png?ex=669b5c97&is=669a0b17&hm=1a8c41b4f5901326c86af0f456bf83320e622b0d9178f531ebec3afb7abdc57b&');"></div>
+    <div class="bg" id="bg4" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862700022272040/2024-06-30_14.30.48_4K.png?ex=669b5c9b&is=669a0b1b&hm=26e4ef3f01f632b0fec96ab939b4a4bfc75d9f8030b10715491e68b45efd2616&');"></div>
+    <div class="bg" id="bg5" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862694116687892/2024-06-30_14.10.09_4K.png?ex=669b5c99&is=669a0b19&hm=f323c0edae47a6e69095a1aa19e0948e4c3e0c68d4e0cea1fee83cb157f7ba6b&');"></div>
+
     <div class="container">
         <header>
             <h1>Epoch伺服器</h1>
@@ -90,12 +124,26 @@
         <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
     </div>
     <div id="circle"></div>
+
     <script>
-    document.addEventListener('mousemove', function(e) {
-        var circle = document.getElementById('circle');
-        circle.style.left = (e.pageX - 100) + 'px';
-        circle.style.top = (e.pageY - 100) + 'px';
-    });
+        document.addEventListener('mousemove', function(e) {
+            var circle = document.getElementById('circle');
+            circle.style.left = (e.pageX - 100) + 'px';
+            circle.style.top = (e.pageY - 100) + 'px';
+        });
+
+        let current = 0;
+        const images = document.querySelectorAll('.bg');
+        const total = images.length;
+
+        function changeBackground() {
+            images[current].classList.remove('active');
+            current = (current + 1) % total;
+            images[current].classList.add('active');
+        }
+
+        images[0].classList.add('active');
+        setInterval(changeBackground, 5000);
     </script>
 </body>
 </html>
