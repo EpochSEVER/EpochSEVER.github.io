@@ -29,6 +29,10 @@
             opacity: 1;
         }
 
+        .bg.blur {
+            filter: blur(10px);
+        }
+
         body {
             background-color: #333;
             color: #fff;
@@ -79,6 +83,17 @@
             z-index: 3;
         }
 
+        #focus {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 3;
+            backdrop-filter: none;
+            transition: backdrop-filter 0.3s ease;
+        }
+
         .discord-button {
             display: inline-block;
             padding: 10px 20px;
@@ -87,6 +102,7 @@
             font-size: 1.5em;
             transition: background-color 0.3s ease;
             color: white;
+            background-color: #7289da;
         }
 
         .discord-button:hover {
@@ -111,11 +127,11 @@
     </style>
 </head>
 <body>
-    <div class="bg" id="bg1" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862676462866432/2024-06-30_14.15.48_4K.png?ex=669b5c95&is=669a0b15&hm=bf04251cf97c458797908a7aa341e1910bf1527f301306a88e283fea7400c10e&');"></div>
-    <div class="bg" id="bg2" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862681047105586/2024-06-30_14.20.38_4K.png?ex=669b5c96&is=669a0b16&hm=f14732c7ca2fcdeb54da8e11f1e5f2e76b6865fad27b19a9d95dfd45bd62274f&');"></div>
-    <div class="bg" id="bg3" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862684658401381/2024-06-30_14.04.46_4K.png?ex=669b5c97&is=669a0b17&hm=1a8c41b4f5901326c86af0f456bf83320e622b0d9178f531ebec3afb7abdc57b&');"></div>
-    <div class="bg" id="bg4" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862700022272040/2024-06-30_14.30.48_4K.png?ex=669b5c9b&is=669a0b1b&hm=26e4ef3f01f632b0fec96ab939b4a4bfc75d9f8030b10715491e68b45efd2616&');"></div>
-    <div class="bg" id="bg5" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862694116687892/2024-06-30_14.10.09_4K.png?ex=669b5c99&is=669a0b19&hm=f323c0edae47a6e69095a1aa19e0948e4c3e0c68d4e0cea1fee83cb157f7ba6b&');"></div>
+    <div class="bg blur" id="bg1" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862676462866432/2024-06-30_14.15.48_4K.png?ex=669b5c95&is=669a0b15&hm=bf04251cf97c458797908a7aa341e1910bf1527f301306a88e283fea7400c10e&');"></div>
+    <div class="bg blur" id="bg2" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862681047105586/2024-06-30_14.20.38_4K.png?ex=669b5c96&is=669a0b16&hm=f14732c7ca2fcdeb54da8e11f1e5f2e76b6865fad27b19a9d95dfd45bd62274f&');"></div>
+    <div class="bg blur" id="bg3" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862684658401381/2024-06-30_14.04.46_4K.png?ex=669b5c97&is=669a0b17&hm=1a8c41b4f5901326c86af0f456bf83320e622b0d9178f531ebec3afb7abdc57b&');"></div>
+    <div class="bg blur" id="bg4" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862700022272040/2024-06-30_14.30.48_4K.png?ex=669b5c9b&is=669a0b1b&hm=26e4ef3f01f632b0fec96ab939b4a4bfc75d9f8030b10715491e68b45efd2616&');"></div>
+    <div class="bg blur" id="bg5" style="background-image: url('https://cdn.discordapp.com/attachments/1252570918669123584/1256862694116687892/2024-06-30_14.10.09_4K.png?ex=669b5c99&is=669a0b19&hm=f323c0edae47a6e69095a1aa19e0948e4c3e0c68d4e0cea1fee83cb157f7ba6b&');"></div>
 
     <div class="container">
         <header>
@@ -141,12 +157,23 @@
         </div>
     </div>
     <div id="circle"></div>
+    <div id="focus"></div>
 
     <script>
         document.addEventListener('mousemove', function(e) {
             var circle = document.getElementById('circle');
             circle.style.left = (e.pageX - 100) + 'px';
             circle.style.top = (e.pageY - 100) + 'px';
+
+            var focus = document.getElementById('focus');
+            focus.style.left = (e.pageX - 200) + 'px';
+            focus.style.top = (e.pageY - 200) + 'px';
+            focus.style.backdropFilter = 'none';
+        });
+
+        document.addEventListener('mouseout', function() {
+            var focus = document.getElementById('focus');
+            focus.style.backdropFilter = 'blur(10px)';
         });
 
         let current = 0;
