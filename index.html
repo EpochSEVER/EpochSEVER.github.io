@@ -59,8 +59,15 @@
             text-align: center;
         }
 
+        .text-container {
+            background-color: rgba(128, 128, 128, 0.7); /* 半透明灰色背景 */
+            padding: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+
         h1, h2, p {
-            margin: 0 0 15px 0;
+            margin: 0;
         }
 
         #circle {
@@ -116,12 +123,24 @@
         <header>
             <h1>Epoch伺服器</h1>
         </header>
-        <h2>伺服器資訊</h2>
-        <p><span class="light-green">游戲版本:</span> <span class="light-purple">1.21</span></p>
-        <p><span class="light-orange">伺服器IP:</span> <span class="light-yellow">sg-m1.vproxy.cloud:20006</span></p>
-        <p>伺服器人超少。</p>
-        <p>如果你有任何問題或建議，别來bb。</p>
-        <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
+        <div class="text-container">
+            <h2>伺服器資訊</h2>
+        </div>
+        <div class="text-container">
+            <p><span class="light-green">游戲版本:</span> <span class="light-purple">1.21</span></p>
+        </div>
+        <div class="text-container">
+            <p><span class="light-orange">伺服器IP:</span> <span class="light-yellow">sg-m1.vproxy.cloud:20006</span></p>
+        </div>
+        <div class="text-container">
+            <p>伺服器人超少。</p>
+        </div>
+        <div class="text-container">
+            <p>如果你有任何問題或建議，别來bb。</p>
+        </div>
+        <div class="text-container">
+            <a href="https://discord.gg/Ychrba9Xu6" class="discord-button">Discord</a>
+        </div>
     </div>
     <div id="circle"></div>
 
