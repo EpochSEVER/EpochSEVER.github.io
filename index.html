@@ -89,9 +89,10 @@
             height: 400px;
             border-radius: 50%;
             pointer-events: none;
-            z-index: 3;
-            backdrop-filter: none;
-            transition: backdrop-filter 0.3s ease;
+            z-index: 2;
+            background: radial-gradient(circle, transparent 50%, rgba(0, 0, 0, 0.5) 70%);
+            backdrop-filter: blur(10px);
+            transition: backdrop-filter 0.3s ease, left 0.1s, top 0.1s;
         }
 
         .discord-button {
@@ -168,12 +169,6 @@
             var focus = document.getElementById('focus');
             focus.style.left = (e.pageX - 200) + 'px';
             focus.style.top = (e.pageY - 200) + 'px';
-            focus.style.backdropFilter = 'none';
-        });
-
-        document.addEventListener('mouseout', function() {
-            var focus = document.getElementById('focus');
-            focus.style.backdropFilter = 'blur(10px)';
         });
 
         let current = 0;
